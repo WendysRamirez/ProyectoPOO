@@ -1,0 +1,66 @@
+<?php
+include_once("class-persona.php");
+	class Empleado extends Persona{
+
+		private $fechaIngreso;
+		private $area;
+		private $turnoTrabajo;
+		private $sueldos;
+
+		public function __construct($nombre,
+					$apellido,
+					$edad,
+					$id,
+					$estado,
+					$genero,
+					$direccion,
+					$telefono,
+					$fechaIngreso,
+					$area,
+					$turnoTrabajo,
+					$sueldos){
+			parent::__construct($nombre,
+					$apellido,
+					$edad,
+					$id,
+					$estado,
+					$genero,
+					$direccion,
+					$telefono);
+			$this->fechaIngreso = $fechaIngreso;
+			$this->area = $area;
+			$this->turnoTrabajo = $turnoTrabajo;
+			$this->sueldos = $sueldos;
+		}
+		public function getFechaIngreso(){
+			return $this->fechaIngreso;
+		}
+		public function setFechaIngreso($fechaIngreso){
+			$this->fechaIngreso = $fechaIngreso;
+		}
+		public function getArea(){
+			return $this->area;
+		}
+		public function setArea($area){
+			$this->area = $area;
+		}
+		public function getTurnoTrabajo(){
+			return $this->turnoTrabajo;
+		}
+		public function setTurnoTrabajo($turnoTrabajo){
+			$this->turnoTrabajo = $turnoTrabajo;
+		}
+		public function getSueldos(){
+			return $this->sueldos;
+		}
+		public function setSueldos($sueldos){
+			$this->sueldos = $sueldos;
+		}
+		public function toString(){
+			return parent::toString()."FechaIngreso: " . $this->fechaIngreso . 
+				" Area: " . $this->area . 
+				" TurnoTrabajo: " . $this->turnoTrabajo . 
+				" Sueldos: " . $this->sueldos;
+		}
+	}
+?>
