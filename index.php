@@ -15,8 +15,14 @@
  <html>
  <head>
  	<title>Clinica "EL Milagro"</title>
+ 	<meta charset="utf-8">
+ 	<link href="css/bootstrap.min.css" rel="stylesheet">
+
  </head>
  <body>
  Hola
+
+ 	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
  </body>
  </html>
