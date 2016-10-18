@@ -1,14 +1,16 @@
 <?php
 include_once("class-persona.php");
-	class Empleado extends Persona{
 
-		private $fechaIngreso;
-		private $area;
-		private $turnoTrabajo;
-		private $sueldos;
+	abstract class Empleado extends Persona{
+
+		protected $fechaIngreso;
+		protected $area;
+		protected $turnoTrabajo;
+		protected $sueldos;
 
 		public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -21,12 +23,17 @@ include_once("class-persona.php");
 					$sueldos){
 			parent::__construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
 					$genero,
 					$direccion,
-					$telefono);
+					$telefono,
+					$fechaIngreso,
+					$area,
+					$turnoTrabajo,
+					$sueldos);
 			$this->fechaIngreso = $fechaIngreso;
 			$this->area = $area;
 			$this->turnoTrabajo = $turnoTrabajo;

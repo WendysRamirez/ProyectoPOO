@@ -7,6 +7,7 @@
 
 		public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -16,9 +17,12 @@
 					$fechaIngreso,
 					$area,
 					$turnoTrabajo,
-					$sueldos){
+					$sueldos,
+					$CodigoEnfermero,
+					$Paciente){
 			parent::__construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
