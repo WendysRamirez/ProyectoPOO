@@ -4,6 +4,7 @@
 
 		private $nombre;
 		private $apellido;
+		private $fechaNacimiento;
 		private $edad;
 		private $id;
 		private $estado;
@@ -13,6 +14,7 @@
 
 		public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -21,6 +23,7 @@
 					$telefono){
 			$this->nombre = $nombre;
 			$this->apellido = $apellido;
+			$this->fechaNacimiento=$fechaNacimiento;
 			$this->edad = $edad;
 			$this->id = $id;
 			$this->estado = $estado;
@@ -39,6 +42,12 @@
 		}
 		public function setApellido($apellido){
 			$this->apellido = $apellido;
+		}
+		public function getfechaNacimiento(){
+			return $this->fechaNacimiento;
+		}
+		public function setfechaNacimiento($fechaNacimiento){
+			$this->fechaNacimiento =$fechaNacimiento;
 		}
 		public function getEdad(){
 			return $this->edad;
@@ -78,7 +87,8 @@
 		}
 		public function toString(){
 			return "Nombre: " . $this->nombre . 
-				" Apellido: " . $this->apellido . 
+				" Apellido: " . $this->apellido .
+				" Fecha Nacimiento: ".$this->fechaNacimiento. 
 				" Edad: " . $this->edad . 
 				" Id: " . $this->id . 
 				" Estado: " . $this->estado . 

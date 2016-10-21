@@ -8,6 +8,7 @@
 
 		public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -23,6 +24,7 @@
 					$contraseña){
 			parent::__construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,

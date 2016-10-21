@@ -4,9 +4,10 @@
 
 		private $codigoDoctor;
 		private $especialidad;
-		private $area;
+	
 	public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -16,9 +17,12 @@
 					$fechaIngreso,
 					$area,
 					$turnoTrabajo,
-					$sueldos){
+					$sueldos,
+					$codigoDoctor,
+					$especialidad){
 			parent::__construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -31,7 +35,7 @@
 					$sueldos);
 			$this->codigoDoctor = $codigoDoctor;
 			$this->especialidad = $especialidad;
-			$this->area = $area;
+			
 		}
 		public function getCodigoDoctor(){
 			return $this->codigoDoctor;
@@ -45,16 +49,11 @@
 		public function setEspecialidad($especialidad){
 			$this->especialidad = $especialidad;
 		}
-		public function getArea(){
-			return $this->area;
-		}
-		public function setArea($area){
-			$this->area = $area;
-		}
+		
 		public function toString(){
 			return parent::toString()."CodigoDoctor: " . $this->codigoDoctor . 
-				" Especialidad: " . $this->especialidad . 
-				" Area: " . $this->area;
+				" Especialidad: " . $this->especialidad; 
+				
 		}
 	}
 ?>

@@ -7,6 +7,7 @@
 
 		public function __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
@@ -17,6 +18,7 @@
 					$expediente){
 			parent:: __construct($nombre,
 					$apellido,
+					$fechaNacimiento,
 					$edad,
 					$id,
 					$estado,
