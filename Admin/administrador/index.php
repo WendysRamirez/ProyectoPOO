@@ -99,7 +99,21 @@
                         <a href="html/doctores.php"><i class="fa fa-fw fa-user"></i> Doctores</a>
                     </li>
                     <li>
-                        <a href="html/enfermeros.php"><i class="fa fa-fw fa-user"></i> Enfermeros</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#enfermeros"><i class="fa fa-fw fa-user"></i> Enfermeria <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="enfermeros" class="collapse">
+                            <li>
+                                <a href="html/expediente.php">Crear Expediente</a>
+                            </li>
+                            <li>
+                                <a href="html/ver_expediente.php">Ver Expediente</a>
+                            </li>
+                            <li>
+                                <a href="html/enfermeros.php">Pre-clinica</a>
+                            </li>
+                            <li>
+                                <a href="html/citas.php">Gestion de Citas</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#paciente"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
@@ -222,6 +236,13 @@
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+    <script src="js/funcionesenfermeria.js"></script>
+    <script type="text/javascript">
+        $("#btn-accion").click(function(evento){
+            evento.preventDefault();
+            alert("Accion");
+        });
+    </script>
 
 </body>
 

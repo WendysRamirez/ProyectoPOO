@@ -97,7 +97,21 @@ html>
                         <a href="doctores.php"><i class="fa fa-fw fa-user"></i> Doctores</a>
                     </li>
                     <li>
-                        <a href="enfermeros.php"><i class="fa fa-fw fa-user"></i> Enfermeros</a>
+                       <a href="javascript:;" data-toggle="collapse" data-target="#enfermeros"><i class="fa fa-fw fa-user"></i> Enfermeria <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="enfermeros" class="collapse">
+                            <li>
+                                <a href="expediente.php">Ver Expediente</a>
+                            </li>
+                            <li>
+                                <a href="ver_expediente.php">Ver Expediente</a>
+                            </li>
+                            <li>
+                                <a href="enfermeros.php">Pre-clinica</a>
+                            </li>
+                            <li>
+                                <a href="citas.php">Gestion de Citas</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>

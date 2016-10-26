@@ -97,11 +97,25 @@
                         <a href="doctores.php"><i class="fa fa-fw fa-user"></i> Doctores</a>
                     </li>
                     <li>
-                        <a href="enfermeros.php"><i class="fa fa-fw fa-user"></i> Enfermeros</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#enfermeros"><i class="fa fa-fw fa-user"></i> Enfermeria <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="enfermeros" class="collapse">
+                            <li>
+                                <a href="expediente.php">Ver Expediente</a>
+                            </li>
+                            <li>
+                                <a href="ver_expediente.php">Ver Expediente</a>
+                            </li>
+                            <li>
+                                <a href="enfermeros.php">Pre-clinica</a>
+                            </li>
+                            <li>
+                                <a href="citas.php">Gestion de Citas</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#paciente"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="paciente" class="collapse">
                         <li>
                                 <a href="#">Expediente</a>
                             </li>
@@ -165,6 +179,131 @@
             </div>
            
         </nav>
+
+<div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h1 class="page-header">
+                           Registro de Enfermeria
+                        </h1>
+                       
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                            <table class="table table-striped table-hover">
+                            <tr><h1>Pre-Clinica</h1></tr>
+                                <tr>
+                                <td>Numero de Expediente:</td>
+                                <td>
+                                <input type=" text" name="N°" id="txt-numero-expediente" class="form-control" >
+                                <p class="help-block">Numero de expediente</p>
+                                
+                                </td>
+                                </tr>
+                          
+                                <tr>
+                                <td>Nombre: </td>
+                                <td>
+                                    <input type="text" name="Nombre" id="txt-nombre" class="form-control" placeholder="Nombre del paciente">
+                                
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>Edad: </td>
+                                <td>
+                                     <input type="text" name="Edad" id="txt-edad" class="form-control" placeholder="Edad del Paciente"> 
+                                </td>
+                                </tr>
+                                
+                                
+
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>Peso: </td>
+                                <td>
+                                
+                                <input type="text" name="" id="txt-peso" class="form-control" placeholder="Peso del Paciente">
+                                </td>
+                                </tr>
+
+                            
+                                <tr>
+                                <td>Altura: </td>
+                                <td>
+                                
+                                    <input type="text" name="" id="txt-altura" class="form-control" placeholder="Atura del Paciente">
+                                
+                                </td>
+                                </tr>
+
+                                <tr>
+                                <td>Temperatura: </td>
+                                <td>
+                                
+                                <input type="text" name="temperatura" id="txt-temperatura" class="form-control" placeholder="Temperatura en °C">
+                                 </td>
+                                </tr>
+                                <tr>
+                                <td>Presion Arterial: </td>
+                                <td>
+                             
+                               
+                                <input type="text" name="presion-arterial" id="txt-presion-arterial" class="form-control" placeholder="Presion">
+                          </td>
+                                </tr>
+
+                            <tr>
+                                <td>Correo Enfermeria: </td>
+                                <td>
+                                
+                                <p class="form-control-static">enfermeria@gmail.com</p>
+                           </td>
+                                </tr>
+
+                           <tr>
+                                <td>Agregar un documento: </td>
+                                <td>
+                                
+                                <input type="file">
+                             
+                                
+                            <tr>
+                            <td colspan="2">     
+                            <button id= "btn-Actualizar" class="btn btn-danger">Actualizar</button>
+                            <button id= "btn-Modificar" class="btn btn-primary">Modificar</button>
+                            
+                            </td>
+                            </tr>
+                            
+
+                        </table>
+
+                    </div>
+
+
+                    
+                <!-- /.col-lg-12 -->
+            </div>
+                    
+                   
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+
     
 
     <!-- jQuery -->
@@ -172,6 +311,38 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btn.Actualizar").click(function(){
+        $("#btn-Actualizar").button("loading");
+        $("#img-loading").fadeIn(100);
+
+        var parametros="txt-numero-expediente="+$("#txt-numero-expediente").val()+"&"+"txt-nombre="+$("#txt-nombre").val()+"&"+"txt-edad="+$("#txt-edad").val()+"&"+"txt-peso"+$("#txt-peso").val()+"&"+"txt-altura="+$("#txt-altura").val()+"&"+"txt-temperatura="+$("#txt-temperatura").val()+"&"+"txt-presion-arterial"+$("txt-presion-arterial").val();
+
+                alert("Informacion que se enviara" + parametros);
+                $.ajax({
+                    url:"ajax/procesar.php?accion=guardar",
+                    method:"POST",
+                    data:parametros,
+                    succes:function(respuesta){
+                        $("#img-loading").fadeOut(100);
+                        $("#btn-Actualizar").button("reset");
+                        $("#div-respuesta").html(respuesta);
+
+
+                    },
+                    error:function(){
+                        alert("ocurrio un error.")
+                    }
+                });
+
+
+
+    });
+        
+
+    </script>
 
 </body>
 

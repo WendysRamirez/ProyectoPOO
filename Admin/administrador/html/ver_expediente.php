@@ -120,10 +120,10 @@
                 
               
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#paciente"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="paciente" class="collapse">
                         <li>
-                                <a href="expediente.html">Expediente</a>
+                                <a href="#">Expediente</a>
                             </li>
                             <li>
                                 <a href="#">Historial Medico</a>
