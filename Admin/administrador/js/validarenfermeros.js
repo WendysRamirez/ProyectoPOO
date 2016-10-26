@@ -4,6 +4,7 @@ $(document).ready(function(){
         $("#img-loading").fadeIn(100);
 
         function validaForm(){
+            var variable=true;
             echo"validar los campos";
 
 

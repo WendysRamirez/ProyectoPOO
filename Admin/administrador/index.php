@@ -15,6 +15,18 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/plugins/morris.css" rel="stylesheet">  
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background: url(fondo_art.jpg) #2b2b2a;
+            background-position:center;
+             
+
+        }
+        </style>
 
 </head>
 
@@ -236,7 +248,7 @@
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
-    <script src="js/funcionesenfermeria.js"></script>
+    <script src="js/validarenfermeros.js"></script>
     <script type="text/javascript">
         $("#btn-accion").click(function(evento){
             evento.preventDefault();
@@ -247,3 +259,4 @@
 </body>
 
 </html>
+

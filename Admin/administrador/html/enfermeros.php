@@ -181,6 +181,18 @@
         </nav>
 
 <div id="page-wrapper">
+<style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            background: url(fondo_art.jpg) #2b2b2a;
+            background-position:center;
+             
+
+        }
+        </style>
 
             <div class="container-fluid">
 
@@ -190,6 +202,7 @@
                         <h1 class="page-header">
                            Registro de Enfermeria
                         </h1>
+
                        
                     </div>
                 </div>

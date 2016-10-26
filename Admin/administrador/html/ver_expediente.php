@@ -323,7 +323,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src="js/funcionesenfermeria.js"></script>
+    <script src="js/validarenfermeros.js"></script>
     
 </body>
 
