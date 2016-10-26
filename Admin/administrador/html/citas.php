@@ -241,10 +241,16 @@
                                         </tr>
                                         
                                     </tbody>
+                                    
                                 </table>
                             </div>
                             <p> Las citas con los especialistas tienen que estar puntuales y con un acompañante por cualquier cosa que pueda surgir.</p>
                         </div>
+                       
+                        <button id= "btn-Modificar" class="btn btn-primary">Modificar</button>
+                         <button id= "btn-Actualizar" class="btn btn-danger">Actualizar</button>
+
+
                     </div>
                 </div>
 </div>
