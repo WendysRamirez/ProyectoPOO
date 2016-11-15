@@ -30,19 +30,57 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Menu</a>
+                <a class="navbar-brand" href="index.html">Menu</a>
             </div>
             <ul class="nav navbar-right top-nav">
 
+            <!--Mensaje y el icono -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Usuario</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i>Lunes 15/septiembre72016 </p>
+                                        <p>Este es un mensaje</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="message-footer">
+                            <a href="#">Leer todos los mensajes nuevos</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Termina los mensaje-->
 
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        
-                        
                         <li>
-                            <a href="html/login.php"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensajes </a>
+                        </li>  
+                         <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Configuracion</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-question"></i>Ayuda </a>
+                         </li> 
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
                         </li>
                     </ul>
                 </li>
@@ -54,32 +92,55 @@
                     
 
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
                     </li>
-                    
                     <li>
-                        <a href="index_doctor.php"><i class="fa fa-fw fa-pencil"></i>Doctor</a>
+                        <a href="html/doctores.html"><i class="fa fa-fw fa-user"></i> Doctores</a>
                     </li>
-
                     <li>
-                        <a href="index_enfermeros.php"><i class="fa fa-fw fa-pencil"></i>Enfermero</a>
+                        <a href="html/enfermeros.html"><i class="fa fa-fw fa-user"></i> Enfermeros</a>
                     </li>
-
                     <li>
-                        <a href="index_admin.php"><i class="fa fa-fw fa-pencil"></i>Administrador</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                        <li>
+                                <a href="#">Expediente</a>
+                            </li>
+                            <li>
+                                <a href="#">Historial Medico</a>
+                            </li>
+                            <li>
+                                <a href="#">Tratamientos</a>
+                            </li>
+                            <li>
+                                <a href="#">Citas</a>
+                            </li>
+                            <li>
+                                <a href="#">Recetas</a>
+                            </li>
+                        </ul>
                     </li>
-
-                   <li>
-                        <a href="index_farmacia.php"><i class="fa fa-fw fa-pencil"></i>Farmacia</a>
-                    </li>
-
-
                     <li>
-                        <a href="index_paciente.php"><i class="fa fa-fw fa-pencil"></i>Paciente</a>
+                        <a href="html/cuentas_usuarios.html"><i class="fa fa-fw fa-edit"></i> Cuentas de usuarios</a>
+                    </li>
+                   
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-plus"></i> Farmacia<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Medicamentos</a>
+                            </li>
+                            <li>
+                                <a href="#">Sucursales</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="html/asistencia_medica.html"><i class="fa fa-fw fa-pencil"></i> Asistencias Medicas</a>
                     </li>
 
                      <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuracion</a>
+                        <a href="html/configuracion.html"><i class="fa fa-fw fa-gear"></i>Configuracion</a>
                     </li>
                     
                     <
