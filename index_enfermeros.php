@@ -34,15 +34,14 @@
             </div>
             <ul class="nav navbar-right top-nav">
 
-
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
-                        
+                        <li class="divider"></li>
                         <li>
-                            <a href="html/login.php"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                            <a href=""><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
                         </li>
                     </ul>
                 </li>
@@ -51,38 +50,23 @@
             <!-- Menu lateral -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    
-
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
+                        <a href="index_enfermeros.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
+                    </li>
+
+                    <li>
+                        <a href="html/paciente/crear_expediente.php"><i class="fa fa-fw fa-user"></i> Crear Expediente</a>
+                    </li>
+                    <li>
+                        <a href="html/enfermeros/ver_expediente.php"><i class="fa fa-fw fa-user"></i> Ver Expediente</a>
+                    </li>
+                    <li>
+                        <a href="html/enfermeros/enfermeros.php"><i class="fa fa-fw fa-user"></i> Pre-clinica</a>
+                    </li>
+                    <li>
+                        <a href="html/enfermeros/citas.php"><i class="fa fa-fw fa-user"></i> Gestion de Citas</a>
                     </li>
                     
-                    <li>
-                        <a href="index_doctor.php"><i class="fa fa-fw fa-pencil"></i>Doctor</a>
-                    </li>
-
-                    <li>
-                        <a href="index_enfermeros.php"><i class="fa fa-fw fa-pencil"></i>Enfermero</a>
-                    </li>
-
-                    <li>
-                        <a href="index_admin.php"><i class="fa fa-fw fa-pencil"></i>Administrador</a>
-                    </li>
-
-                   <li>
-                        <a href="index_farmacia.php"><i class="fa fa-fw fa-pencil"></i>Farmacia</a>
-                    </li>
-
-
-                    <li>
-                        <a href="index_paciente.php"><i class="fa fa-fw fa-pencil"></i>Paciente</a>
-                    </li>
-
-                     <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuracion</a>
-                    </li>
-                    
-                    <
                 </ul>
             </div>
            
@@ -92,6 +76,7 @@
 
             <div class="container-fluid">
 
+               
                 <!-- Page principal -->
                 <div class="row ">
                     <div class="col-lg-12 ">
@@ -114,18 +99,28 @@
                     <div class="row">
                         
                         <div class="jumbotron text-center alert alert-info" role="alert">
-                            <h1>Bienvenido</h1>
-                            <p>La clinica a sido creada para ayudar a las personas que necesitan asistencias medicas.</p>
+                            <h1>Porque tu salud nos importa</h1>
+                            <p></p>
 
-                            <img src="img/clinica.jpg" class="img-responsive">
+                            <img src="img/farmacia.jpg" class="img-responsive">
                         </div >
                         <div class="jumbotron text-center alert alert-info" role="alert">
                             <h1></h1>
-                            <p>Contamos con personal altamente calificado para cada unas de las areas de trabajo</p> 
-                            <img src="img/doctores.jpg" class="img-responsive">
+                            <p>Contamos con la mas grande cadena de farmacias de tu comunidad</p> 
+                            <img src="img/farmacia3.jpg" class="img-responsive">
+                            <h5 style="text-align:left">Tegucigalpa
+                                Oficinas Pricipales: Edificio Farinter, atras de la Toyota, Barrio la Granja, Teléfono:
+                            </h5>
+ 
+                            <h5 style="text-align:left">
+                            San Pedro Sula
+                            Oficinas Principales: Barrio Santa Rosa, segundo anillo periférico 7 y  8 calle S.E. media cuadra al sur de la iglesia Luz del Mundo,
+                            </h5>
+ 
+                            <h5>Todos los Derechos Reservados  Farmacias El Milagro  ©   2016</h5>
                         </div>
                     </div>
-                </div>
+               </div>
                 
 
                 
@@ -141,7 +136,8 @@
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
-
+    
+   
 </body>
 
 </html>

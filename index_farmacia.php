@@ -34,55 +34,81 @@
             </div>
             <ul class="nav navbar-right top-nav">
 
+            <!--Mensaje y el icono -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Usuario</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i>Lunes 15/septiembre72016 </p>
+                                        <p>Este es un mensaje</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="message-footer">
+                            <a href="#">Leer todos los mensajes nuevos</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Termina los mensaje-->
 
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        
-                        
                         <li>
-                            <a href="html/login.php"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             
-            <!-- Menu lateral -->
+  <!-- Menu lateral -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     
 
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
+                        <a href="index_farmacia.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
                     </li>
+                    <li>
+                        <a href="html/farmacia/registrar_medicamento.php"><i class="fa fa-fw fa-user"></i> Registrar Medicamento </a>
+                    </li>
+                    <li>
+                        <a href="html/farmacia/ver_registros_medicamentos.php"><i class="fa fa-fw fa-user"></i> Ver Medicamentos</a>
+                    </li>
+                    <li>
+                        <a href="html/farmacia/Actualizar_medicamento.php"><i class="fa fa-fw fa-user"></i>Actualizar Medicamento</a>
+                    </li>
+                    <li>
+                        <a href="html/farmacia/eliminar_medicamento.php" ><i class="fa fa-fw fa-user"></i>Eliminar Medicamento</a>
                     
-                    <li>
-                        <a href="index_doctor.php"><i class="fa fa-fw fa-pencil"></i>Doctor</a>
                     </li>
 
                     <li>
-                        <a href="index_enfermeros.php"><i class="fa fa-fw fa-pencil"></i>Enfermero</a>
-                    </li>
-
                     <li>
-                        <a href="index_admin.php"><i class="fa fa-fw fa-pencil"></i>Administrador</a>
-                    </li>
-
-                   <li>
-                        <a href="index_farmacia.php"><i class="fa fa-fw fa-pencil"></i>Farmacia</a>
-                    </li>
-
-
-                    <li>
-                        <a href="index_paciente.php"><i class="fa fa-fw fa-pencil"></i>Paciente</a>
-                    </li>
+                        <a href="html/farmacia/pagar_medicamento.php"><i class="fa fa-fw fa-user"></i>Pagar Medicamento</a>
 
                      <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuracion</a>
+                        <a href="html/farmacia/sucursales.php" ><i class="fa fa-fw fa-user"></i> </i>Sucursales</a>
+                       
                     </li>
+                    <li>
+                        <a href="html/farmacia/recetas.php"><i class="fa fa-fw fa-pencil"></i>Recetas</a>
+                    </li>
+
                     
-                    <
+                    
                 </ul>
             </div>
            
@@ -114,33 +140,38 @@
                     <div class="row">
                         
                         <div class="jumbotron text-center alert alert-info" role="alert">
-                            <h1>Bienvenido</h1>
-                            <p>La clinica a sido creada para ayudar a las personas que necesitan asistencias medicas.</p>
+                            <h1>Porque tu salud nos importa</h1>
+                            <p></p>
 
-                            <img src="img/clinica.jpg" class="img-responsive">
+                            <img src="img/farmacia.jpg" class="img-responsive">
                         </div >
                         <div class="jumbotron text-center alert alert-info" role="alert">
                             <h1></h1>
-                            <p>Contamos con personal altamente calificado para cada unas de las areas de trabajo</p> 
-                            <img src="img/doctores.jpg" class="img-responsive">
+                            <p>Contamos con la mas grande cadena de farmacias de tu comunidad</p> 
+                            <img src="img/farmacia3.jpg" class="img-responsive">
+                            <h5 style="text-align:left">Tegucigalpa
+                                Oficinas Pricipales: Edificio Farinter, atras de la Toyota, Barrio la Granja, Teléfono:
+                            </h5>
+ 
+                            <h5 style="text-align:left">
+                            San Pedro Sula
+                            Oficinas Principales: Barrio Santa Rosa, segundo anillo periférico 7 y  8 calle S.E. media cuadra al sur de la iglesia Luz del Mundo,
+                            </h5>
+ 
+                            <h5>Todos los Derechos Reservados  Farmacias El Milagro  ©   2016</h5>
                         </div>
                     </div>
                 </div>
                 
 
-                
-    <!-- /#wrapper -->
+        <script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
+    
 
 </body>
 

@@ -34,15 +34,13 @@
             </div>
             <ul class="nav navbar-right top-nav">
 
-
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
-                        
                         <li>
-                            <a href="html/login.php"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
+                            <a href="index.php"><i class="fa fa-fw fa-power-off"></i> Cerrar sesion</a>
                         </li>
                     </ul>
                 </li>
@@ -54,35 +52,61 @@
                     
 
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
-                    </li>
-                    
-                    <li>
-                        <a href="index_doctor.php"><i class="fa fa-fw fa-pencil"></i>Doctor</a>
+                        <a href="index_admin.php"><i class="fa fa-fw fa-dashboard"></i> Inicio </a>
                     </li>
 
                     <li>
-                        <a href="index_enfermeros.php"><i class="fa fa-fw fa-pencil"></i>Enfermero</a>
+                        <a href="html/admin/doctores.php"><i class="fa fa-fw fa-user"></i> Doctores</a>
                     </li>
-
                     <li>
-                        <a href="index_admin.php"><i class="fa fa-fw fa-pencil"></i>Administrador</a>
+                        <a href="html/admin/enfermeros.php"><i class="fa fa-fw fa-user"></i> Enfermeros</a>
                     </li>
-
-                   <li>
-                        <a href="index_farmacia.php"><i class="fa fa-fw fa-pencil"></i>Farmacia</a>
-                    </li>
-
-
                     <li>
-                        <a href="index_paciente.php"><i class="fa fa-fw fa-pencil"></i>Paciente</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#paciente"><i class="fa fa-fw fa-user"></i> Paciente <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="paciente" class="collapse">
+                            <li>
+                                <a href="html/admin/expediente_Admon.php">Expediente</a>
+                            </li>
+                            <li>
+                                <a href="html/admin/tratamiento.php">Tratamiento</a>
+                            </li>
+                            
+                            <li>
+                                <a href="html/admin/citas.php">Citas</a>
+                            </li>
+                            
+                        </ul>
                     </li>
 
                      <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuracion</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#farmacia"><i class="fa fa-fw fa-user"></i> Farmacia <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="farmacia" class="collapse">
+                            <li>
+                                <a href="html/admin/sucursales.php">Sucursales</a>
+                            </li>
+                            <li>
+                                <a href="html/admin/ver_registros_medicamentos.php">Medicamentos</a>
+                            </li>
+                            
+                        </ul>
                     </li>
-                    
-                    <
+
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#cuentas"><i class="fa fa-fw fa-user"></i> Cuentas Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="cuentas" class="collapse">
+                            <li>
+                                <a href="html/admin/crear_cuentas_usuarios.php">Crear Cuenta</a>
+                            </li>
+                            <li>
+                                <a href="html/admin/actualizar_cuentas_usuario.php">Actualizar Cuenta</a>
+                            </li>
+                            <li>
+                                <a href="html/admin/eliminar_cuentas_usuario.php">Eliminar cuenta</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
            
@@ -92,7 +116,6 @@
 
             <div class="container-fluid">
 
-                <!-- Page principal -->
                 <div class="row ">
                     <div class="col-lg-12 ">
 
@@ -114,30 +137,36 @@
                     <div class="row">
                         
                         <div class="jumbotron text-center alert alert-info" role="alert">
-                            <h1>Bienvenido</h1>
-                            <p>La clinica a sido creada para ayudar a las personas que necesitan asistencias medicas.</p>
+                            <h1>Porque tu salud nos importa</h1>
+                            <p></p>
 
-                            <img src="img/clinica.jpg" class="img-responsive">
+                            <img src="img/farmacia.jpg" class="img-responsive">
                         </div >
                         <div class="jumbotron text-center alert alert-info" role="alert">
                             <h1></h1>
-                            <p>Contamos con personal altamente calificado para cada unas de las areas de trabajo</p> 
-                            <img src="img/doctores.jpg" class="img-responsive">
+                            <p>Contamos con la mas grande cadena de farmacias de tu comunidad</p> 
+                            <img src="img/farmacia3.jpg" class="img-responsive">
+                            <h5 style="text-align:left">Tegucigalpa
+                                Oficinas Pricipales: Edificio Farinter, atras de la Toyota, Barrio la Granja, Teléfono:
+                            </h5>
+ 
+                            <h5 style="text-align:left">
+                            San Pedro Sula
+                            Oficinas Principales: Barrio Santa Rosa, segundo anillo periférico 7 y  8 calle S.E. media cuadra al sur de la iglesia Luz del Mundo,
+                            </h5>
+ 
+                            <h5>Todos los Derechos Reservados  Farmacias El Milagro  ©   2016</h5>
                         </div>
                     </div>
                 </div>
-                
 
-                
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
+   
     <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
+    
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
+  
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
