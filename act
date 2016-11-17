@@ -1,0 +1,416 @@
+<?php
+
+class crearPDF{
+public function crearPDF($receta,$des){require "fpdf.php";
+
+class PDF extends FPDF
+{
+
+}
+
+//DECLARACION DE HOJA
+
+$pdf = new PDF('P','mm', 'letter');
+$pdf->SetMargins(20,18); 
+$pdf->AliasNBPages();
+$pdf->AddPage();
+
+//Datos TITULO
+$pdf->SetTextColor(0x00,0x00,0x00);
+$pdf->SetFont("Arial","b",9);
+$pdf->Cell(0,4,'RECETA',0,1,'C');
+
+//Conexion
+include_once("../class/class_conexion.php");
+$conexion = new Conexion();
+if($conexion)
+	echo "bien";
+else
+	echo "Mal";
+
+//Mostrar tabla
+$pdf->Ln();
+
+$sql = "SELECT * FROM tbl_receta WHERE id_receta = $receta" ;
+$resultado = $conexion -> ejecutarInstruccion($sql);
+if($resultado)
+	echo "bien";
+else
+	echo "Mal";
+
+	$pdf->cell(30,5,"Receta #",1,0,'C');
+	$pdf->cell(30,5,"Descripcion",1,1,'C');
+
+while($fila = $conexion->obtenerFila($resultado) )
+{
+	$pdf->cell(30,5,$fila["id_receta"],1,0,'C');
+	$pdf->cell(30,5,$fila["descripcion"],1,1,'C');
+}
+$pdf->output('','F');
+}
+
+}
+?>
+<?php
+
+	class eliminar_medicamento{
+
+		private $codigoM;
+
+		public function __construct(){
+			
+	
+		}
+		public function getCodigoM(){
+			return $this->codigoM;
+		}
+		public function setCodigoM($codigoM){
+			$this->codigoM = $codigoM;
+		}
+
+		public function toString(){
+			return "CodigoM: " . $this->codigoM;
+
+		}
+
+		public function eliminarRegistro($conexion,$codigoAplicacion){
+
+            $sql = sprintf(
+                "DELETE FROM tbl_medicinas 
+					WHERE cod_medicamento = '%s'
+                	",  
+
+                    stripslashes($codigoAplicacion)
+                );
+            echo $sql;
+            $resultado = $conexion->ejecutarInstruccion($sql);
+            if ($resultado)
+                echo "se elimino";
+            else
+                echo "nada";
+        }
+
+
+	}
+?>
+<?php
+
+	class registrar_medicamento{
+
+		private $codigoM;
+		private $nombreM;
+		private $fecha_elaboracion;
+		private $fecha_caducidad;
+		private $cantidad;
+		private $Sucursal;
+		private $precio;
+
+		public function __construct($codigoM,
+					$nombreM,
+					$fecha_elaboracion,
+					$fecha_caducidad,
+					$cantidad,
+					$Sucursal,
+					$precio){
+			$this->codigoM = $codigoM;
+			$this->nombreM = $nombreM;
+			$this->fecha_elaboracion = $fecha_elaboracion;
+			$this->fecha_caducidad = $fecha_caducidad;
+			$this ->cantidad = $cantidad;
+			$this->Sucursal = $Sucursal;
+			$this->precio = $precio;
+		}
+		public function getCodigoM(){
+			return $this->codigoM;
+		}
+		public function setCodigoM($codigoM){
+			$this->codigoM = $codigoM;
+		}
+		public function getNombreM(){
+			return $this->nombreM;
+		}
+		public function setNombreM($nombreM){
+			$this->nombreM = $nombreM;
+		}
+		public function getFecha_elaboracion(){
+			return $this->fecha_elaboracion;
+		}
+		public function setFecha_elaboracion($fecha_elaboracion){
+			$this->fecha_elaboracion = $fecha_elaboracion;
+		}
+		public function getFecha_caducidad(){
+			return $this->fecha_caducidad;
+		}
+		public function setFecha_caducidad($fecha_caducidad){
+			$this->fecha_caducidad = $fecha_caducidad;
+		}
+		public function getSucursal(){
+			return $this->Sucursal;
+		}
+		public function setSucursal($Sucursales){
+			$this->Sucursal = $Sucursal;
+		}
+
+		public function getDescripcion(){
+			return $this->Descripcion;
+		}
+		public function setDescripcion($Descripcion){
+			$this->Descripcion = $Descripcion;
+		}
+		public function toString(){
+			return "CodigoM: " . $this->codigoM . 
+				" NombreM: " . $this->nombreM . 
+				" Fecha_elaboracion: " . $this->fecha_elaboracion . 
+				" Fecha_caducidad: " . $this->fecha_caducidad . 
+				" Cantidad: " . $this->cantidad .  
+				" Descripcion: " . $this->Descripcion;
+		}
+
+
+
+
+		public function guardarRegistro($conexion){
+
+            $sql = sprintf(
+                "INSERT INTO tbl_medicinas(cod_medicamento, Cantidad, nombre, precio, fecha_Elaboracion, fecha_Vencimiento, cod_Sucursal)
+                VALUES (NULL, '%s', '%s', '%s', '%s', 
+                            '%s','%s')",  
+                        stripslashes($this->cantidad),
+                        stripslashes($this->nombreM),
+                        stripslashes($this->precio),
+                        stripslashes($this->fecha_elaboracion),
+                        stripslashes($this->fecha_caducidad),
+                        stripslashes($this ->Sucursal->getCod_sucursal())
+
+                );
+            //echo $sql;
+            $resultado = $conexion->ejecutarInstruccion($sql);
+            if ($resultado)
+                echo "Se Registro";
+            else
+                echo "nada";
+        }
+	}
+?>
+<?php
+
+	class Sucursal{
+
+		private $cod_sucursal;
+
+
+		public function __construct($cod_sucursal){
+			$this->cod_sucursal = $cod_sucursal;
+
+		}
+		public function getCod_sucursal(){
+			return $this->cod_sucursal;
+		}
+		public function setCod_sucursal($cod_sucursal){
+			$this->cod_sucursal = $cod_sucursal;
+		}
+		
+		public function toString(){
+			return "Cod_sucursal: " . $this->cod_sucursal;
+		}
+
+		public static function generarListaSucursal($conexion){
+			$resultado = $conexion->ejecutarInstruccion(
+				"SELECT cod_Sucursal, Nombre
+				FROM tbl_sucursales"
+			);
+			echo '<select name="txt-sucursal" id="txt-sucursal" class="form-control">';
+			while($fila = $conexion->obtenerFila($resultado)){
+				echo '<option value="'.$fila["cod_Sucursal"].'">'.
+					$fila["Nombre"].' </option>';
+			}
+			echo '</select>';
+
+		}
+
+
+	}
+?>
+<?php
+
+	class actualizar_medicamento{
+
+		private $codigoM;
+		private $nombreM;
+		private $fecha_elaboracion;
+		private $fecha_caducidad;
+		private $cantidad;
+		private $Sucursal;
+		private $precio;
+
+		public function __construct($codigoM,
+					$nombreM,
+					$fecha_elaboracion,
+					$fecha_caducidad,
+					$cantidad,
+					$Sucursal,
+					$precio){
+			$this->codigoM = $codigoM;
+			$this->nombreM = $nombreM;
+			$this->fecha_elaboracion = $fecha_elaboracion;
+			$this->fecha_caducidad = $fecha_caducidad;
+			$this->cantidad = $cantidad;
+			$this->Sucursal = $Sucursal;
+			$this->precio = $precio;
+		}
+		public function getCodigoM(){
+			return $this->codigoM;
+		}
+		public function setCodigoM($codigoM){
+			$this->codigoM = $codigoM;
+		}
+		public function getNombreM(){
+			return $this->nombreM;
+		}
+		public function setNombreM($nombreM){
+			$this->nombreM = $nombreM;
+		}
+		public function getFecha_elaboracion(){
+			return $this->fecha_elaboracion;
+		}
+		public function setFecha_elaboracion($fecha_elaboracion){
+			$this->fecha_elaboracion = $fecha_elaboracion;
+		}
+		public function getFecha_caducidad(){
+			return $this->fecha_caducidad;
+		}
+		public function setFecha_caducidad($fecha_caducidad){
+			$this->fecha_caducidad = $fecha_caducidad;
+		}
+		public function getCantidad(){
+			return $this->cantidad;
+		}
+		public function setCantidad($cantidad){
+			$this->cantidad = $cantidad;
+		}
+		public function getSucursal(){
+			return $this->Sucursal;
+		}
+		public function setSucursal($Sucursal){
+			$this->Sucursal = $Sucursal;
+		}
+		public function getPrecio(){
+			return $this->precio;
+		}
+		public function setPrecio($precio){
+			$this->precio = $precio;
+		}
+		public function toString(){
+			return "CodigoM: " . $this->codigoM . 
+				" NombreM: " . $this->nombreM . 
+				" Fecha_elaboracion: " . $this->fecha_elaboracion . 
+				" Fecha_caducidad: " . $this->fecha_caducidad . 
+				" Cantidad: " . $this->cantidad . 
+				" Sucursal: " . $this->Sucursal . 
+				" Precio: " . $this->precio;
+		}
+
+		public function actualizarRegistro($conexion,$codigoAplicacion){
+
+            $sql = sprintf(
+                "UPDATE tbl_medicinas 
+                SET  Cantidad='%s', nombre='%s', precio='%s', fecha_Elaboracion='%s', fecha_Vencimiento='%s', cod_Sucursal='%s'
+                WHERE cod_medicamento='%s'
+                	",  
+                        stripslashes($this->cantidad),
+                        stripslashes($this->nombreM),
+                        stripslashes($this->precio),
+                        stripslashes($this->fecha_elaboracion),
+                        stripslashes($this->fecha_caducidad),
+                        stripslashes($this ->Sucursal->getCod_sucursal()),
+                        stripslashes($codigoAplicacion)
+                );
+            //echo $sql;
+            $resultado = $conexion->ejecutarInstruccion($sql);
+            if ($resultado)
+                echo "se actualizo";
+            else
+                echo "nada";
+        }
+
+
+	}
+?>
+<?php
+
+	class Conexion{
+
+		private $usuario="root";
+		private $contrasena="";
+		private $host="localhost";
+		private $baseDatos="db_clinica2";
+		private $puerto="3306";
+		private $link;
+
+		public function __construct(){
+			$this->establecerConexion();			
+		}
+
+		public function establecerConexion(){
+			$this->link = mysqli_connect($this->host, $this->usuario, $this->contrasena, $this->baseDatos, $this->puerto);
+
+			if (!$this->link){
+				echo "no se pudo conectar con mysql";
+				exit;
+			}
+		}
+
+		public function cerrarConexion(){
+			mysqli_close($this->link);
+		}
+
+		public function ejecutarInstruccion($sql){
+			return mysqli_query($this->link, $sql);
+		}
+
+		public function obtenerFila($resultado){
+			return mysqli_fetch_array($resultado);
+		}
+
+		public function liberarResultado($resultado){
+			mysqli_free_result($resultado);
+		}
+		public function getUsuario(){
+			return $this->usuario;
+		}
+		public function setUsuario($usuario){
+			$this->usuario = $usuario;
+		}
+		public function getContrasena(){
+			return $this->contrasena;
+		}
+		public function setContrasena($contrasena){
+			$this->contrasena = $contrasena;
+		}
+		public function getHost(){
+			return $this->host;
+		}
+		public function setHost($host){
+			$this->host = $host;
+		}
+		public function getBaseDatos(){
+			return $this->baseDatos;
+		}
+		public function setBaseDatos($baseDatos){
+			$this->baseDatos = $baseDatos;
+		}
+		public function getPuerto(){
+			return $this->puerto;
+		}
+		public function setPuerto($puerto){
+			$this->puerto = $puerto;
+		}
+		public function getLink(){
+			return $this->link;
+		}
+		public function setLink($link){
+			$this->link = $link;
+		}
+
+	}
+?>
